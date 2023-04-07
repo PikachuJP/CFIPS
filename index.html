@@ -7,6 +7,7 @@
     body {
       font-family: 'MV Boli', sans-serif;
       font-size: 16px;
+      font-weight: bold;
       background: #ad7add;
       counter-reset: Serial;
       direction: ltr;
@@ -20,21 +21,22 @@
       padding: 5px;
     }
     table {
-      font-size: 14px;
-      width: 100%;
+      font-weight: bold;
+      font-size: 16px;
+      width: 105%;
       border-collapse:collapse;
     }
     th {
       background: #5aa0cf;
-      padding: 10px 2px;
+      padding: 4px 2px;
       height: 44px;
-      font-weight: normal;
-      text-align: right;
+      font-weight: bold;
+      text-align: left;
     }
     table.content td {
       background: #a89cdd;
       height: 20px;
-      padding: 8px;
+      padding: 5px;
     }
     table.list tr:nth-child(odd) td {
       background: #ddd;
@@ -60,26 +62,26 @@
     }
     div.text-div {
       background-color: #8173cf;
-      width: 340px;
+      width: 358px;
       height: 20px;
       padding: 10px;
     }
     input[type=number] {
-      width: 60px;
+      width: 100px;
     }
     input[type=text] {
       width: 170px;
     }
     button.start{
-      width: 150px;
+      width: 180px;
       font-size: 16px;
       font-weight: bold;
       color: green;
-      padding: 7px;
+      padding: 5px;
       float: left;
     }
     button.cancel{
-      width: 150px;
+      width: 180px;
       font-size: 16px;
       font-weight: bold;
       color: red;
@@ -112,12 +114,12 @@
       </tr>
       <tr>
         <td colspan="2">
-          <label>Just Use This IP Range <input type="text" dir="ltr" id="ip-include" placeholder="Like 104.17,141" /></label>
+          <label>Just Use This IP Range  <input type="text" dir="ltr" id="ip-include" placeholder="Like 104.17,141" /></label>
         </td>
       </tr>
       <tr>
         <td colspan="2">
-          <label>Don't Use This IP Range <input type="text" dir="ltr" id="ip-exclude" placeholder="Like 8,103.22" /></label>
+          <label>Don't Use This IP Range <input type="text" dir="ltr" id="ip-exclude" placeholder="Like 8,103.22" /></label>
         </td>
       </tr>
       <tr>
@@ -151,10 +153,10 @@
           </th>
           <th width="60">
             <a class="download-link" href="#" onclick="downloadAsCSV()">
-              <img height="24px" src="assets/excel.png" />
+              <img height="22px" src="assets/excel.png" />
             </a>
             <a class="download-link" href="#" onclick="downloadAsJSON()">
-              <img height="24px" src="assets/json.png" />
+              <img height="22px" src="assets/json.png" />
             </a>
           </th>
         </tr>
@@ -2214,7 +2216,7 @@ function startScan() {
   document.getElementById('btn-start').disabled = 'disabled';
   document.getElementById('btn-start').style.color = 'gray';
   document.getElementById('test-no').innerText = '';
-  document.getElementById('start-hint').innerHTML = `Prepairing <img src="./assets/preparing.gif" height="16" />`;
+  document.getElementById('start-hint').innerHTML = `Prepairing...`;
   document.getElementById('start-hint').style = `color: green; font-weight: bold;`;
 
   setTimeout(() => {
