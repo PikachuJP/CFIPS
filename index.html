@@ -39,7 +39,7 @@
       padding: 5px;
     }
     table.list tr:nth-child(odd) td {
-      background: #ddd;
+      background: #dddddd;
     }
     table.list tr:nth-child(even) td {
       background: #ccc;
@@ -85,7 +85,7 @@
       font-size: 16px;
       font-weight: bold;
       color: red;
-      padding: 7px;
+      padding: 5px;
       float: left;
       display: none;
     }
@@ -132,7 +132,7 @@
         </td>
       </tr>
     </table>
-    <div class="text-div" style="border-top: 1px solid #666; background: rgb(179, 156, 179);">
+    <div class="text-div" style="border-top: 1px solid #666; background: rgb(255, 208, 0);">
       <div id="start-hint" style="color: red;">Turn Off Your VPN First !</div>
       <div style="width: 110px; float: right;"><span id="test-no"></span></div>
       <div style="width: 120px; float: right;"><span id="ip-no"></span></div>
@@ -2217,8 +2217,8 @@ function startScan() {
   document.getElementById('btn-start').style.color = 'gray';
   document.getElementById('test-no').innerText = '';
   document.getElementById('start-hint').innerHTML = `Prepairing...`;
-  document.getElementById('start-hint').style = `color: green; font-weight: bold;`;
-
+  document.getElementById('start-hint').style = `color: green; font-weight: bold;color: green; font-weight: bold;`;
+  document.getElementById('test-no').style.textAlign = 'center';
   setTimeout(() => {
     var ips = [];
     var regex = null;
@@ -2343,10 +2343,12 @@ async function testIPs(ipList) {
   if (immediateStop) {
     immediateStop = false;
     document.getElementById('test-no').innerText = `Canceled`;
-    document.getElementById('test-no').style = `color: red; font-weight: bold;`;
+    document.getElementById('test-no').style = `color: red; font-weight: bold;color: green; font-weight: bold;`;
+    document.getElementById('test-no').style.textAlign = 'center';
   } else {
     document.getElementById('test-no').innerText = `Finished`;
     document.getElementById('test-no').style = `color: green; font-weight: bold;`;
+    document.getElementById('test-no').style.textAlign = 'center';
   }
 }
 
@@ -2392,7 +2394,7 @@ function downloadAsCSV() {
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.setAttribute('href', url);
-  link.setAttribute('download', 'ip-list.csv');
+  link.setAttribute('download', 'Resault.csv');
   link.style.display = 'none';
   document.body.appendChild(link);
   link.click();
@@ -2405,7 +2407,7 @@ function downloadAsJSON() {
   const url = URL.createObjectURL(blob);
   const link = document.createElement('a');
   link.setAttribute('href', url);
-  link.setAttribute('download', 'ip-list.json');
+  link.setAttribute('download', 'Resault.json');
   link.style.display = 'none';
   document.body.appendChild(link);
   link.click();
