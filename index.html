@@ -95,7 +95,7 @@
   <div style="padding: 0; margin: auto; width: 360px;">
     <table dir="ltr" class="content">
       <tr>
-        <td colspan="2" align="center" style="border-bottom: 1px solid #53b695;">
+        <td colspan="2" align="center" style="border-bottom: 1px solid #a89cdd;">
           <strong>CFIP Scanner</strong>
         </td>
       </tr>
@@ -2320,6 +2320,7 @@ async function testIPs(ipList) {
           <td>${obj.ip}</td>
           <td>${obj.latency}ms</td>
           <td>
+				<img height="16px" src="assets/${obj.location}.png" />
             <img height="16px" src="assets/copy.png" onclick="copyToClipboard('${obj.ip}')"/>
           </td>
         </tr>`).join('\n');
